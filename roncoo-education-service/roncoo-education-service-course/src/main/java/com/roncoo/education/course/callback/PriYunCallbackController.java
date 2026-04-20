@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.constraints.NotNull;
 
 /**
- * 领课云
+ * 在线防灾云
  *
  * @author wujing
  */
@@ -29,13 +29,13 @@ public class PriYunCallbackController {
 
     @RequestMapping(value = "/vod/upload", method = {RequestMethod.GET, RequestMethod.POST})
     public String vodUpload(@RequestBody PrivateYunVodUpload vodUpload) {
-        log.warn("领课云--点播上传回调--回调参数：{}", JsonUtil.toJsonString(vodUpload));
+        log.warn("在线防灾云--点播上传回调--回调参数：{}", JsonUtil.toJsonString(vodUpload));
         return biz.vodUpload(vodUpload);
     }
 
     @RequestMapping(value = "/vod/auth", method = {RequestMethod.GET, RequestMethod.POST})
     public String auth(@RequestBody PrivateYunVodAuth vodAuth) {
-        log.warn("领课云--授权地址--回调参数：{}", JsonUtil.toJsonString(vodAuth));
+        log.warn("在线防灾云--授权地址--回调参数：{}", JsonUtil.toJsonString(vodAuth));
         return biz.auth(vodAuth);
     }
 

@@ -70,9 +70,9 @@ public class AuthCourseBiz extends BaseBiz {
         if (ObjectUtil.isEmpty(resource)) {
             return Result.error("该资源不存在");
         }
-        if ((resource.getResourceType().equals(ResourceTypeEnum.VIDEO.getCode()) || resource.getResourceType().equals(ResourceTypeEnum.AUDIO.getCode())) && !resource.getVideoStatus().equals(VideoStatusEnum.SUCCES.getCode())) {
-            return Result.error("资源处理中，暂不能学习");
-        }
+//        if ((resource.getResourceType().equals(ResourceTypeEnum.VIDEO.getCode()) || resource.getResourceType().equals(ResourceTypeEnum.AUDIO.getCode())) && !resource.getVideoStatus().equals(VideoStatusEnum.SUCCES.getCode())) {
+//            return Result.error("资源处理中，暂不能学习");
+//        }
 
         if (!check(period)) {
             return Result.error("请购买该课程");

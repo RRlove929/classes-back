@@ -11,9 +11,9 @@ import lombok.Getter;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum SmsPlatformEnum {
     /**
-     * 领课云
+     * 在线防灾云
      */
-    LK_YUN(1, "领课云", "lkyun%", "lkyunSms"),
+    LK_YUN(1, "在线防灾云", "lkyun%", "lkyunSms"),
 
     /**
      * 阿里云

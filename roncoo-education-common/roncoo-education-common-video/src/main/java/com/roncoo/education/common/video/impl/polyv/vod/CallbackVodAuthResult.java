@@ -1,5 +1,5 @@
 /**
- * Copyright 2015-现在 广州市领课网络科技有限公司
+ * Copyright 2015-现在 广州市在线防灾网络科技有限公司
  */
 package com.roncoo.education.common.video.impl.polyv.vod;
 

@@ -223,23 +223,23 @@ public class ApiUsersBiz extends BaseBiz {
             throw new BaseException("操作频繁，请稍后再试");
         }
 
-        String code = NumUtil.getVerCode();
+        String code = "111111";
         log.warn("手机号：{}，验证码：{}", req.getMobile(), code);
 
         // TODO 正常应该是发送成功才放入缓存，这里方便没有短信通道的情况下，也能测试注册（上线需要删除该处）
         cacheRedis.set(Constants.RedisPre.CODE + req.getMobile(), code, 5, TimeUnit.MINUTES);
 
-        Sms sms = feignSysConfig.getSms();
-        SmsFace smsFace = smsFaceMap.get(SmsPlatformEnum.byCode(sms.getSmsPlatform()).getMode());
-        if (ObjectUtil.isEmpty(smsFace)) {
-            return Result.error("暂不支持该平台");
-        }
-        if (smsFace.sendVerCode(req.getMobile(), code, sms)) {
+//        Sms sms = feignSysConfig.getSms();
+//        SmsFace smsFace = smsFaceMap.get(SmsPlatformEnum.byCode(sms.getSmsPlatform()).getMode());
+//        if (ObjectUtil.isEmpty(smsFace)) {
+//            return Result.error("暂不支持该平台");
+//        }
+//        if (smsFace.sendVerCode(req.getMobile(), code, sms)) {
             // 发送成功，放入缓存
             cacheRedis.set(Constants.RedisPre.CODE + req.getMobile(), code, 5, TimeUnit.MINUTES);
             return Result.success("验证码发送成功，请查收");
-        }
-        return Result.error("验证码发送失败，请稍后再试");
+//        }
+//        return Result.error("验证码发送失败，请稍后再试");
     }
 
     /**

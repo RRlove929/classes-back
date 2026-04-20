@@ -22,7 +22,7 @@ public class VideoConfig implements Serializable {
     private String websiteDomain;
 
     /**
-     * 点播平台(1:领课云、2:保利威)
+     * 点播平台(1:在线防灾云、2:保利威)
      */
     private Integer vodPlatform;
 
@@ -62,15 +62,15 @@ public class VideoConfig implements Serializable {
     private String polyvAppSecret;
 
     /**
-     * 领课云，Url
+     * 在线防灾云，Url
      */
     private String priyUrl;
     /**
-     * 领课云，AccessKeyId
+     * 在线防灾云，AccessKeyId
      */
     private String priyAccessKeyId;
     /**
-     * 领课云，AccessKeySecret
+     * 在线防灾云，AccessKeySecret
      */
     private String priyAccessKeySecret;
 }
